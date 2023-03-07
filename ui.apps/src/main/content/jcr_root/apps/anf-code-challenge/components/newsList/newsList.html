@@ -1,0 +1,22 @@
+***Hanumanth***
+<head data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+<meta data-sly-call="${clientLib.css @ categories='newsList'}" data-sly-unwrap></meta>
+
+</head>
+<sly data-sly-use.model="com.anf.core.models.NewsListModel">
+
+    <sly data-sly-list.child="${model.children}" data-sly-unwrap>
+    <div class="container">
+      <div class="image">
+        <img src="${child.urlImage}">
+      </div>
+      <div class="text">
+        <h1>${child.title}</h1>
+        <span id="grey-text">${child.jcr:primaryType} || ${child.author}</span>
+        <p>${child.description}</p>
+      </div>
+    </div>
+    </sly>
+</sly>
+</div>
+***END Code*****
